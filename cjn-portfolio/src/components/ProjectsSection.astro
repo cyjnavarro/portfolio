@@ -1,0 +1,266 @@
+---
+export interface Props {
+  id?: string;
+}
+
+const { id = "projects" } = Astro.props;
+---
+
+<section
+  id={id}
+  class="relative overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-950/60 px-5 py-6 shadow-2xl shadow-black/70 backdrop-blur md:px-7 md:py-7"
+>
+  <div class="space-y-5">
+    <div class="flex items-baseline justify-between gap-3">
+      <h2
+        class="text-xs font-medium uppercase tracking-[0.25em] text-slate-400"
+      >
+        Projects &amp; Skills
+      </h2>
+      <span
+        class="inline-flex items-center rounded-full border border-slate-600/70 bg-slate-900/80 px-3 py-0.5 text-[11px] text-slate-400"
+      >
+        What I build with
+      </span>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1.1fr)]">
+      <!-- Projects list -->
+      <div class="space-y-3">
+        <article
+          class="rounded-xl border border-slate-600/60 bg-gradient-to-br from-cyan-500/10 via-slate-900 to-slate-900 px-3.5 py-3 text-xs text-slate-300"
+        >
+          <header class="mb-1.5 flex items-baseline justify-between gap-2">
+            <h3 class="text-sm font-medium text-slate-50">
+              Web-Based Stock Prediction System(Thesis)
+            </h3>
+            <span class="text-[11px] text-slate-400">Partner · 2024-2025</span>
+          </header>
+          <p class="mb-2 text-xs leading-relaxed text-slate-400">
+            A web-based stock prediction system that uses Facebook Prophet
+            algorithms to predict the inventory stock levels of a laboratory.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[10px]">
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Flask
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              React + Vite
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              PostgreSQL
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Redis Cache
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Tailwind
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Apache Airflow
+            </span>
+          </div>
+        </article>
+
+        <article
+          class="rounded-xl border border-slate-600/60 bg-gradient-to-br from-indigo-500/10 via-slate-900 to-slate-900 px-3.5 py-3 text-xs text-slate-300"
+        >
+          <header class="mb-1.5 flex items-baseline justify-between gap-2">
+            <h3 class="text-sm font-medium text-slate-50">
+              Apicius Kitchen Management System
+            </h3>
+            <span class="text-[11px] text-slate-400">Team · 2025</span>
+          </header>
+          <p class="mb-2 text-xs leading-relaxed text-slate-400">
+            Designed to streamline kitchen management workflows, this system
+            features automated price calculations for every requisition
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[10px]">
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              React + Vite
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Node.js
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              PostgreSQL
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Express.js
+            </span>
+          </div>
+        </article>
+        <article
+          class="rounded-xl border border-slate-600/60 bg-gradient-to-br from-indigo-500/10 via-slate-900 to-slate-900 px-3.5 py-3 text-xs text-slate-300"
+        >
+          <header class="mb-1.5 flex items-baseline justify-between gap-2">
+            <h3 class="text-sm font-medium text-slate-50">
+              Liver Health Checker
+            </h3>
+            <span class="text-[11px] text-slate-400">Team · 2025</span>
+          </header>
+          <p class="mb-2 text-xs leading-relaxed text-slate-400">
+            A web application that employs machine learning algorithms to assist
+            in early detection and classification of liver disease based on
+            patient medical data.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[10px]">
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Nest.js
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Flask
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              PostgreSQL
+            </span>
+            <span
+              class="rounded-full border border-slate-600/70 bg-slate-900/90 px-2 py-0.5 text-slate-300"
+            >
+              Bayesian algorithms
+            </span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Skills grid -->
+      <aside
+        class="flex flex-col gap-2.5 rounded-xl border border-dashed border-slate-600/80 bg-slate-900/95 px-3.5 py-3"
+      >
+        <div class="flex items-baseline justify-between text-[11px]">
+          <span class="text-slate-300">Technical skills</span>
+          <span class="text-slate-500">
+            Add logos or icons into each slot
+          </span>
+        </div>
+
+        <div
+          class="grid grid-cols-3 gap-2 text-[10px] text-slate-400 sm:grid-cols-4"
+        >
+          <!-- Replace each placeholder with an <img> later -->
+          <div
+            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
+          >
+            <div>
+              <strong class="mb-0.5 block text-[11px] text-slate-100">
+                Language
+              </strong>
+              Add logo<br />
+              (e.g. JavaScript)
+            </div>
+          </div>
+
+          <div
+            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
+          >
+            <div>
+              <strong class="mb-0.5 block text-[11px] text-slate-100">
+                Framework
+              </strong>
+              Add logo<br />
+              (e.g. React)
+            </div>
+          </div>
+
+          <div
+            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
+          >
+            <div>
+              <strong class="mb-0.5 block text-[11px] text-slate-100">
+                Backend
+              </strong>
+              Add logo<br />
+              (e.g. Node.js)
+            </div>
+          </div>
+
+          <div
+            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
+          >
+            <div>
+              <strong class="mb-0.5 block text-[11px] text-slate-100">
+                Database
+              </strong>
+              Add logo<br />
+              (e.g. MongoDB)
+            </div>
+          </div>
+
+          <div
+            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
+          >
+            <div>
+              <strong class="mb-0.5 block text-[11px] text-slate-100">
+                Styling
+              </strong>
+              Add logo<br />
+              (e.g. Tailwind)
+            </div>
+          </div>
+
+          <div
+            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
+          >
+            <div>
+              <strong class="mb-0.5 block text-[11px] text-slate-100">
+                Tooling
+              </strong>
+              Add logo<br />
+              (e.g. Git)
+            </div>
+          </div>
+
+          <div
+            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
+          >
+            <div>
+              <strong class="mb-0.5 block text-[11px] text-slate-100">
+                Cloud
+              </strong>
+              Add logo<br />
+              (e.g. Vercel)
+            </div>
+          </div>
+
+          <div
+            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
+          >
+            <div>
+              <strong class="mb-0.5 block text-[11px] text-slate-100">
+                Other
+              </strong>
+              Add logo<br />
+              (any skill)
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

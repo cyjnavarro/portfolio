@@ -1,0 +1,115 @@
+---
+export interface Props {
+  id?: string;
+  location: string;
+  email: string;
+  phone: string;
+  github: string;
+  linkedin: string;
+}
+
+const {
+  id = "contact",
+  location,
+  email,
+  phone,
+  github,
+  linkedin,
+} = Astro.props;
+---
+
+<section
+  id={id}
+  class="relative overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-950/60 px-5 py-6 shadow-2xl shadow-black/70 backdrop-blur md:px-7 md:py-7"
+>
+  <div class="space-y-5">
+    <div class="flex items-baseline justify-between gap-3">
+      <h2
+        class="text-xs font-medium uppercase tracking-[0.25em] text-slate-400"
+      >
+        Contact
+      </h2>
+      <span
+        class="inline-flex items-center rounded-full border border-slate-600/70 bg-slate-900/80 px-3 py-0.5 text-[11px] text-slate-400"
+      >
+        Let’s connect
+      </span>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.1fr)]">
+      <div class="space-y-3 text-sm text-slate-300">
+        <div class="space-y-1">
+          <div
+            class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500"
+          >
+            Email
+          </div>
+          <a
+            href={`mailto:${email}`}
+            class="text-sm text-slate-100 underline-offset-2 hover:underline"
+          >
+            {email}
+          </a>
+        </div>
+
+        <div class="space-y-1">
+          <div
+            class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500"
+          >
+            Phone
+          </div>
+          <div class="text-sm text-slate-100">
+            {phone}
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <div
+            class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500"
+          >
+            Location
+          </div>
+          <div class="text-sm text-slate-100">
+            {location}
+          </div>
+        </div>
+
+        <div class="mt-2 flex flex-wrap gap-2">
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center rounded-full border border-slate-600/80 bg-slate-900/95 px-3 py-1 text-xs text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-400/80 hover:text-slate-50"
+          >
+            GitHub
+          </a>
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center rounded-full border border-slate-600/80 bg-slate-900/95 px-3 py-1 text-xs text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-400/80 hover:text-slate-50"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col gap-2.5 rounded-xl border border-slate-600/70 bg-gradient-to-b from-blue-600/25 to-slate-950 px-3.5 py-3 text-xs text-slate-200"
+      >
+        <p class="text-xs text-slate-100">
+          You can keep this as a simple note area or later turn it into a real
+          form connected to a backend or form service.
+        </p>
+        <textarea
+          class="min-h-[80px] w-full resize-y rounded-xl border border-slate-600/80 bg-slate-950/90 px-2.5 py-2 text-xs text-slate-100 outline-none ring-cyan-400/70 focus:border-cyan-400 focus:ring-1"
+          placeholder="Write a short message you'd like visitors to send you, or replace this with a form later."
+        ></textarea>
+        <p class="text-[11px] text-slate-400">
+          Tip: replace the contact details above with your real information and
+          remove this hint text when you’re ready.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,91 @@
+---
+import profImg from "../assets/prof.png";
+
+export interface Props {
+  name: string;
+  role: string;
+  location: string;
+  email: string;
+  github: string;
+  linkedin: string;
+}
+
+const { name, role, location, email, github, linkedin } = Astro.props;
+---
+
+<aside
+  class="md:sticky md:top-24 self-start rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4 shadow-xl shadow-black/60 backdrop-blur"
+>
+  <div class="flex flex-col gap-4">
+    <!-- Avatar -->
+    <div class="flex items-center gap-3">
+      <div
+        class="relative h-20 w-20 overflow-hidden rounded-full border border-slate-700/70 bg-slate-900"
+      >
+        <img
+          src={profImg.src}
+          alt={name}
+          loading="lazy"
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <div class="space-y-1 leading-tight">
+        <h1 class="text-lg font-semibold text-slate-50">
+          {name}
+        </h1>
+        <p class="text-xs text-slate-400">
+          {role}
+        </p>
+        <p class="text-[11px] text-slate-500">
+          {location}
+        </p>
+      </div>
+    </div>
+
+
+    <!-- Contact buttons (GitHub-style) -->
+    <div class="flex flex-col gap-2">
+      <a
+        href={`mailto:${email}`}
+        class="flex items-center justify-center rounded-md border border-slate-600/80 bg-slate-900/90 px-3 py-1.5 text-xs font-medium text-slate-100 transition hover:bg-slate-800"
+      >
+        Email
+      </a>
+      <div class="flex gap-2">
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 rounded-md border border-slate-600/80 bg-slate-900/90 px-3 py-1.5 text-center text-[11px] font-medium text-slate-100 transition hover:bg-slate-800"
+        >
+          GitHub
+        </a>
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 rounded-md border border-slate-600/80 bg-slate-900/90 px-3 py-1.5 text-center text-[11px] font-medium text-slate-100 transition hover:bg-slate-800"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- Meta info like GitHub profile sidebar -->
+    <ul class="space-y-1.5 text-[11px] text-slate-400">
+      <li>
+        <span class="font-medium text-slate-300">Status:</span>
+        <span class="ml-1 align-middle text-emerald-400"> ● </span>
+        <span class="ml-1">Open to opportunities</span>
+      </li>
+      <li>
+        <span class="font-medium text-slate-300">Focus:</span>
+        <span class="ml-1"> Web development · Frontend </span>
+      </li>
+      <li>
+        <span class="font-medium text-slate-300">Timezone:</span>
+        <span class="ml-1">Philippines (PH)</span>
+      </li>
+    </ul>
+  </div>
+</aside>

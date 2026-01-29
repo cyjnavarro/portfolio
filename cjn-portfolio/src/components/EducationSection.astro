@@ -1,0 +1,74 @@
+---
+export interface Props {
+  id?: string;
+}
+
+const { id = "education" } = Astro.props;
+---
+
+<section
+  id={id}
+  class="relative overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-950/60 px-5 py-6 shadow-2xl shadow-black/70 backdrop-blur md:px-7 md:py-7"
+>
+  <div class="space-y-5">
+    <div class="flex items-baseline justify-between gap-3">
+      <h2
+        class="text-xs font-medium uppercase tracking-[0.25em] text-slate-400"
+      >
+        Education
+      </h2>
+      <span
+        class="inline-flex items-center rounded-full border border-slate-600/70 bg-slate-900/80 px-3 py-0.5 text-[11px] text-slate-400"
+      >
+        Background
+      </span>
+    </div>
+
+    <ul class="flex flex-col gap-3.5 text-sm text-slate-300">
+      <li
+        class="grid gap-3 border-b border-indigo-700/50 pb-3.5 text-xs text-slate-300 sm:grid-cols-[minmax(0,2.3fr)_minmax(0,1.3fr)]"
+      >
+        <div class="space-y-1">
+          <div class="text-sm font-medium text-slate-50">
+            Bachelor of Science in Computer Science
+          </div>
+          <div class="text-xs text-slate-400">
+            Naga College Foundation Inc. · Naga City, Philippines · 2021 – 2025
+          </div>
+        </div>
+        <div class="space-y-1">
+          <span
+            class="inline-flex rounded-full border border-blue-500/70 bg-blue-500/15 px-2.5 py-0.5 text-[11px] text-blue-100"
+          >
+            Awards and Achievements
+          </span>
+          <p class="text-xs leading-relaxed text-slate-400">
+            Cum Laude<br />Best in Practicum<br />Dean's List (2021 - 2025)
+          </p>
+        </div>
+      </li>
+
+      <li
+        class="grid gap-3 text-xs text-slate-300 sm:grid-cols-[minmax(0,2.3fr)_minmax(0,1.3fr)]"
+      >
+        <div class="space-y-1">
+          <div class="text-sm font-medium text-slate-50">
+            Additional Training / Certification
+          </div>
+          <div class="text-xs text-slate-400">
+            Microsoft Office Specialist: PowerPoint Associate · December 2023
+          </div>
+          <div class="text-xs text-slate-400">
+            10th TOPCIT Philippines-Level 2 · 2024
+          </div>
+        </div>
+        <div>
+          <p class="text-xs leading-relaxed text-slate-400">
+            Top 16 Regional(V) Startups Awardee: Musna - A ride hailing app for
+            Naga City, Philippines.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
