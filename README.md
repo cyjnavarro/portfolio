@@ -1,5 +1,3 @@
-# portfolio
-
 # Portfolio
 
 A modern, responsive portfolio website built with Astro and Tailwind CSS.
