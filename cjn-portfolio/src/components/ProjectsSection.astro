@@ -1,9 +1,27 @@
 ---
+import { Icon } from "astro-icon/components";
+
 export interface Props {
   id?: string;
 }
 
 const { id = "projects" } = Astro.props;
+
+const skills = [
+  { label: "JavaScript", icon: "simple-icons:javascript" },
+  { label: "React", icon: "simple-icons:react" },
+  { label: "Node.js", icon: "simple-icons:nodedotjs" },
+  { label: "PostgreSQL", icon: "simple-icons:postgresql" },
+  { label: "Tailwind CSS", icon: "simple-icons:tailwindcss" },
+  { label: "Git", icon: "simple-icons:git" },
+  { label: "Vercel", icon: "simple-icons:vercel" },
+  { label: "TypeScript", icon: "simple-icons:typescript" },
+  { label: "PHP", icon: "simple-icons:php"},
+  { label: "Python", icon: "simple-icons:python"},
+  { label: "C++", icon: "simple-icons:cplusplus"},
+  { label: "HTML", icon: "simple-icons:html5"},
+  { label: "CSS", icon: "simple-icons:css"},
+];
 ---
 
 <section
@@ -151,114 +169,32 @@ const { id = "projects" } = Astro.props;
 
       <!-- Skills grid -->
       <aside
-        class="flex flex-col gap-2.5 rounded-xl border border-dashed border-slate-600/80 bg-slate-900/95 px-3.5 py-3"
+        class="flex flex-col gap-2.5 rounded-xl border border-slate-600/80 bg-slate-900/95 px-3.5 py-3"
       >
-        <div class="flex items-baseline justify-between text-[11px]">
+        <div class="text-[11px]">
           <span class="text-slate-300">Technical skills</span>
-          <span class="text-slate-500">
-            Add logos or icons into each slot
-          </span>
         </div>
 
         <div
-          class="grid grid-cols-3 gap-2 text-[10px] text-slate-400 sm:grid-cols-4"
+          class="grid grid-cols-3 gap-2 text-[10px] text-slate-400 sm:grid-cols-3"
         >
-          <!-- Replace each placeholder with an <img> later -->
-          <div
-            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
-          >
-            <div>
-              <strong class="mb-0.5 block text-[11px] text-slate-100">
-                Language
-              </strong>
-              Add logo<br />
-              (e.g. JavaScript)
-            </div>
-          </div>
-
-          <div
-            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
-          >
-            <div>
-              <strong class="mb-0.5 block text-[11px] text-slate-100">
-                Framework
-              </strong>
-              Add logo<br />
-              (e.g. React)
-            </div>
-          </div>
-
-          <div
-            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
-          >
-            <div>
-              <strong class="mb-0.5 block text-[11px] text-slate-100">
-                Backend
-              </strong>
-              Add logo<br />
-              (e.g. Node.js)
-            </div>
-          </div>
-
-          <div
-            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
-          >
-            <div>
-              <strong class="mb-0.5 block text-[11px] text-slate-100">
-                Database
-              </strong>
-              Add logo<br />
-              (e.g. MongoDB)
-            </div>
-          </div>
-
-          <div
-            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
-          >
-            <div>
-              <strong class="mb-0.5 block text-[11px] text-slate-100">
-                Styling
-              </strong>
-              Add logo<br />
-              (e.g. Tailwind)
-            </div>
-          </div>
-
-          <div
-            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
-          >
-            <div>
-              <strong class="mb-0.5 block text-[11px] text-slate-100">
-                Tooling
-              </strong>
-              Add logo<br />
-              (e.g. Git)
-            </div>
-          </div>
-
-          <div
-            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
-          >
-            <div>
-              <strong class="mb-0.5 block text-[11px] text-slate-100">
-                Cloud
-              </strong>
-              Add logo<br />
-              (e.g. Vercel)
-            </div>
-          </div>
-
-          <div
-            class="flex aspect-[4/3] items-center justify-center rounded-lg border border-dashed border-slate-600/80 bg-slate-950/90 px-1 text-center"
-          >
-            <div>
-              <strong class="mb-0.5 block text-[11px] text-slate-100">
-                Other
-              </strong>
-              Add logo<br />
-              (any skill)
-            </div>
-          </div>
+          {
+            skills.map(({ label, icon }) => (
+              <div
+                class="flex aspect-[4/3] flex-col items-center justify-center gap-1.5 rounded-lg border border-slate-600/80 bg-slate-950/90 px-1 py-2"
+                title={label}
+              >
+                <Icon
+                  name={icon}
+                  class="h-8 w-8 shrink-0 text-slate-100 sm:h-9 sm:w-9"
+                  aria-hidden
+                />
+                <span class="max-w-full truncate text-center text-[10px] text-slate-300 sm:text-[11px]">
+                  {label}
+                </span>
+              </div>
+            ))
+          }
         </div>
       </aside>
     </div>

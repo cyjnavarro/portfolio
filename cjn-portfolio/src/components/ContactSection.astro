@@ -6,6 +6,9 @@ export interface Props {
   phone: string;
   github: string;
   linkedin: string;
+  facebook: string;
+  /** Path to resume file in public folder, e.g. "/resume.pdf" */
+  resumeUrl?: string;
 }
 
 const {
@@ -15,6 +18,8 @@ const {
   phone,
   github,
   linkedin,
+  facebook,
+  resumeUrl = "/Navarro, Cyryl John.pdf",
 } = Astro.props;
 ---
 
@@ -91,24 +96,44 @@ const {
           >
             LinkedIn
           </a>
+          <a
+          href={facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center rounded-full border border-slate-600/80 bg-slate-900/95 px-3 py-1 text-xs text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-400/80 hover:text-slate-50"
+        >
+          Facebook
+        </a>
         </div>
       </div>
 
       <div
-        class="flex flex-col gap-2.5 rounded-xl border border-slate-600/70 bg-gradient-to-b from-blue-600/25 to-slate-950 px-3.5 py-3 text-xs text-slate-200"
+        class="flex flex-col items-center justify-center gap-3 rounded-xl border border-slate-600/70 bg-slate-950/80 px-3.5 py-6 text-center"
       >
-        <p class="text-xs text-slate-100">
-          You can keep this as a simple note area or later turn it into a real
-          form connected to a backend or form service.
+        <p class="text-xs text-slate-300">
+          Download my resume for more details about my experience and skills.
         </p>
-        <textarea
-          class="min-h-[80px] w-full resize-y rounded-xl border border-slate-600/80 bg-slate-950/90 px-2.5 py-2 text-xs text-slate-100 outline-none ring-cyan-400/70 focus:border-cyan-400 focus:ring-1"
-          placeholder="Write a short message you'd like visitors to send you, or replace this with a form later."
-        ></textarea>
-        <p class="text-[11px] text-slate-400">
-          Tip: replace the contact details above with your real information and
-          remove this hint text when you’re ready.
-        </p>
+        <a
+          href={resumeUrl}
+          download
+          class="inline-flex items-center gap-2 rounded-lg border border-slate-500/70 bg-slate-900/90 px-5 py-2.5 text-sm font-medium text-slate-100 shadow-md transition hover:-translate-y-0.5 hover:border-cyan-400/70 hover:bg-slate-800 hover:text-white hover:shadow-lg"
+        >
+          <svg
+            class="h-5 w-5 text-slate-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          Download resume
+        </a>
       </div>
     </div>
   </div>
